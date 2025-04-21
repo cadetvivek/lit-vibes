@@ -1,0 +1,507 @@
+/* Base Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #ff5e62;
+    --secondary-color: #ff9966;
+    --text-color: #333;
+    --light-text: #fff;
+    --dark-bg: #111;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --gradient: linear-gradient(to right, #ff5e62, #ff9966);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.app-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.highlight {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Button Styles */
+.download-btn {
+    background: var(--gradient);
+    color: var(--light-text);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 94, 98, 0.4);
+    margin: 1rem auto;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 94, 98, 0.6);
+}
+
+.download-btn i {
+    font-size: 1.2rem;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    overflow: hidden;
+    background-color: var(--dark-bg);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.backdrop-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    z-index: 0;
+    opacity: 0.5;
+}
+
+.backdrop-card {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(1px);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    color: var(--light-text);
+}
+
+.logo-container {
+    margin-bottom: 2rem;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+.hero-text {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+/* Features Section */
+.features-section {
+    padding: 4rem 2rem;
+    background-color: #fff;
+}
+
+.trend-cards {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    margin-bottom: 2rem;
+}
+
+.trend-cards::-webkit-scrollbar {
+    display: none;
+}
+
+.trend-card {
+    min-width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background-size: cover;
+    background-position: center;
+    flex: 0 0 auto;
+}
+
+.trend-card:nth-child(1) {
+    background-image: url('../assets/images/card1.jpg');
+}
+
+.trend-card:nth-child(2) {
+    background-image: url('../assets/images/card2.jpg');
+}
+
+.trend-card:nth-child(3) {
+    background-image: url('../assets/images/card3.jpg');
+}
+
+.trend-card:nth-child(4) {
+    background-image: url('../assets/images/card4.jpg');
+}
+
+.trend-card:nth-child(5) {
+    background-image: url('../assets/images/card5.jpg');
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+}
+
+.card-logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+.card-logo img {
+    width: 50px;
+    height: auto;
+}
+
+.trend-card h3 {
+    color: var(--light-text);
+    padding: 1rem;
+    font-size: 1rem;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.tagline {
+    margin: 3rem 0 2rem;
+}
+
+.app-features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 30px;
+    min-width: 200px;
+    justify-content: center;
+}
+
+.feature-icon {
+    background: var(--gradient);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-text);
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+}
+
+.testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.testimonial {
+    flex: 1 1 300px;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    max-width: 400px;
+}
+
+.testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.quote {
+    padding: 1.5rem;
+    position: relative;
+}
+
+.quote i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    opacity: 0.5;
+    margin-bottom: 0.5rem;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: #f5f5f5;
+}
+
+.user img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-info h4 {
+    margin-bottom: 0.2rem;
+    font-size: 1rem;
+}
+
+.user-info p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* CTA Section */
+.cta-section {
+    padding: 4rem 2rem;
+    background: var(--gradient);
+    color: var(--light-text);
+    text-align: center;
+}
+
+.cta-section h2 {
+    margin-bottom: 1.5rem;
+}
+
+.cta-section .download-btn {
+    background: var(--light-text);
+    color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+footer {
+    background-color: #f9f9f9;
+    padding: 4rem 2rem 2rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    flex: 1 1 300px;
+}
+
+.footer-logo img {
+    width: 100px;
+    margin-bottom: 1rem;
+}
+
+.address, .phone {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1rem;
+}
+
+.download-app {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.app-store-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    color: #666;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.copyright {
+    width: 100%;
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-section {
+        min-height: 70vh;
+    }
+    
+    .trend-cards {
+        gap: 0.5rem;
+    }
+    
+    .trend-card {
+        min-width: 150px;
+        height: 250px;
+    }
+    
+    .app-features {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .feature {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .download-app {
+        align-items: center;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .trend-card {
+        min-width: 120px;
+        height: 200px;
+    }
+    
+    .trend-card h3 {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+    
+    .testimonial {
+        flex: 1 1 100%;
+    }
+}
